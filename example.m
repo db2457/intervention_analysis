@@ -13,10 +13,10 @@ intervention_file = readtable(INTERVENTION_FILENAME); intervention_file.time_tak
 %% Step 2: Run intervention analysis, choosing left side for analysis.
 
 SIDE = 0; 
-PLOT_INTERVENTIONS = 1;
+PLOT_INTERVENTIONS = 0;
 
 summary_data = intervention_analysis(cohort_file,intervention_file,DATA_DIR,EPOCH_SIZE,SIDE,PLOT_INTERVENTIONS);
 
 %% Step 3: Save summary data 
 
-writetable('summary_data.xlsx','Results')
+writetable(summary_data,'Results.xlsx')

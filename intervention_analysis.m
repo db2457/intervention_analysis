@@ -26,9 +26,12 @@ function [summary_stats] = intervention_analysis(cohort_file,intervention_file,d
 %   statistics for each intervention
 %
 
-%% SETTINGS
+%% CUSTOMIZATION SETTINGS
+
 VIABLE_THRESHOLD = 0.8; % proportion of data that must be present 
 
+covariates_kim = {'event_id','pt_id','date','percent_below_before','percent_below_after','mean_before','mean_after','median_before','median_after','min_before',...
+                  'min_after','max_before','max_after','auc_below_before','auc_below_after'};       
 
 %% CODE
 
@@ -37,8 +40,7 @@ mkdir('plots')
 mkdir('data')
 
 fs = 0.1
-covariates_kim = {'event_id','pt_id','date','percent_below_before','percent_below_after','mean_before','mean_after','median_before','median_after','min_before',...
-                  'min_after','max_before','max_after','auc_below_before','auc_below_after'};                 
+          
 epoch_file_kim  = cell2table(cell(0,length(covariates_kim)));  epoch_file_kim.Properties.VariableNames = covariates_kim; % initialize empty epoch file
 
 
@@ -324,7 +326,7 @@ for patient = 1:height(cohort_file)
             continue % skip this med admin
         end
 
-      % -CALCULATE COVARIATES -----------------------------
+      % -------- START: CALCULATE COVARIATES -----------------------------
 
 
 
@@ -352,6 +354,7 @@ for patient = 1:height(cohort_file)
         AUC_before = trapz(coord_valid_before ./ fs, win_before.lower(coord_valid_before)) - trapz(coord_valid_before ./ fs, win_before.(ABP)(coord_valid_before)); %X = uniform spacing between samples (s) = sampling period = 1/fs
         AUC_after = trapz(coord_valid_after ./ fs, win_after.lower(coord_valid_after)) - trapz(coord_valid_after ./ fs, win_after.(ABP)(coord_valid_after)); %X = uniform spacing between samples (s) = sampling period = 1/fs
 
+        % -------- END: CALCULATE COVARIATES -----------------------------
 
     
 
