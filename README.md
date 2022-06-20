@@ -42,7 +42,7 @@ Change specifications in `intervention_analysis.m`
 
 ### Real data for Yale SAH patients
 
-I used this code for SAH patients receiving nimodipine during their hospital admission. Yale folks can [download my cohort and intervention spreadsheets on Yale Box](https://yale.box.com/s/q4rgnzs4injtxjsp5girgekorle5fg19)
+I used this code for SAH patients receiving nimodipine during their hospital admission. Yale folks can [download my cohort and intervention spreadsheets and ICM+ CSV files on Yale Box.](https://yale.box.com/s/q4rgnzs4injtxjsp5girgekorle5fg19)
 
 ### References
 None.
