@@ -36,7 +36,7 @@ Open `example.m`. This script uses the example spreadsheets `cohort_file.xlsx` a
 
 ### Customization
 Change specifications in `intervention_analysis.m`
-* `VIABLE_THRESHOLD` refers to the minimum percent (decimal) of data that must be present in the epoch before and after a given intervention for it to be considered for analysis. For example, if `epoch_size=60` and `viable_threshold=0.50`, then all interventions must have at least 30 minutes of data present in the hour before and after to be considered for analysis. Historically, `epoch_size=60` and `viable_threshold=0.80`
+* `VIABLE_THRESHOLD` refers to the minimum percent (decimal) of data that must be present in the epoch before and after a given intervention for it to be considered for analysis. For example, if `epoch_size=60` and `viable_threshold=0.50`, then all interventions must have at least 30 minutes of data present in the hour before and after to be considered for analysis. Historically, `epoch_size=60` and `viable_threshold=0.80`.
 
 To change which summary statistics are generated, you must add computations in the "CALCULATE COVARIATES" section of the code and change variables `covariates_kim` and `covar_kim_data` accordingly. This might be confusing, so feel free to submit an issue if you'd like me to add it. I am happy to do that.
 
