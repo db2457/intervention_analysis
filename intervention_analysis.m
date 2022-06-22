@@ -39,7 +39,7 @@ original_dir = cd;
 mkdir('plots')
 mkdir('data')
 
-fs = 0.1
+fs = 0.1;
           
 epoch_file_kim  = cell2table(cell(0,length(covariates_kim)));  epoch_file_kim.Properties.VariableNames = covariates_kim; % initialize empty epoch file
 
